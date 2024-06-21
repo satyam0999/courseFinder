@@ -1,0 +1,41 @@
+<ng-container *ngIf="!loading">
+  <div *ngIf="!courseResults">
+    <p class="text-4xl font-bold flex justify-center mb-10 mt-20">
+      Admission Chatbot
+    </p>
+    <div class="flex justify-center mt-8">
+      <div class="container mx-auto max-w-screen-md shadow-lg rounded-lg bg-white border-2 p-6 bg-opacity-90" style="background: rgba(255, 255, 255, 0.8);">
+        <div class="chat-container flex flex-col p-8 messages-container bg-gray-50 rounded-lg shadow-lg">
+          <div class="flex justify-start mb-4 animate__animated animate__fadeInUp">
+            <div class="bg-gray-200 p-3 rounded-lg shadow-md">
+              <p class="text-base font-semibold">Hello! I am an AI powered Admission Chatbot</p>
+            </div>
+          </div>
+          <div class="flex justify-start mb-4 animate__animated animate__fadeInUp animate__delay-1s">
+            <div class="bg-gray-200 p-3 rounded-lg shadow-md">
+              <p class="text-base font-semibold">I will recommend you courses for Masters/Bachelors Degree in Germany</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="px-5 py-3 border-t border-gray-300 mt-4">
+          <form class="flex items-center" [formGroup]="angForm" (ngSubmit)="onSubmit()" autocomplete="off">
+            <input formControlName="question" type="text" class="w-3/4 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-md" placeholder="Ex. I want to pursue Masters in Data Science in Germany">
+            <button type="submit" class="w-1/4 ml-2 bg-blue-600 text-white p-2 rounded-lg hover:bg-blue-700 shadow-md">Send</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <app-course-results
+    *ngIf="courseResults"
+    [config]="courseResults"
+    [formData]="angForm.value"
+  ></app-course-results>
+</ng-container>
+<ng-container *ngIf="loading">
+  <div class="flex items-center justify-center h-screen">
+    <h3 class="text-3xl font-bold text-center">Finding Best Colleges For You......</h3>
+  </div>
+</ng-container>

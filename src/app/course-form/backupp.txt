@@ -1,0 +1,82 @@
+    <div class="grid-span-8">
+      <form
+        [formGroup]="angForm"
+        (ngSubmit)="onSubmit()"
+        autocomplete="off"
+        class="max-w-sm mx-auto"
+      >
+        <div class="grid-cols-12">
+          <label
+            for="domain"
+            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white grid-span-6"
+            >Domain (e.g., Finance, Computer Science):</label
+          >
+          <input
+            type="text"
+            id="domain"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            name="domain"
+            formControlName="domain"
+          />
+
+          <label for="studyLevel">Study Level:</label>
+          <select
+            id="studyLevel"
+            class="form-control"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            name="studyLevel"
+            formControlName="studyLevel"
+          >
+            <option value="blank">Select an option</option>
+            <option value="Postgraduate">Postgraduate</option>
+            <option value="Undergraduate">Undergraduate</option></select
+          ><br /><br />
+
+          <label for="course">Specific Course (Optional):</label>
+          <input
+            type="text"
+            id="degree"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            name="degree"
+            formControlName="degree"
+          /><br /><br />
+
+          <!-- <div>
+      <label for="test_type">Select Test (Optional):</label>
+      <select id="test_type" class="form-control" name="test_type" formControlName="test_type">
+        <option value="">-- Select Test --</option>
+        <option value="toefl">TOEFL</option>
+        <option value="ielts">IELTS</option>
+      </select>
+    
+      <label for="test_score">Test Score:</label>
+      <input type="number" id="test_score" class="form-control" name="test_score" formControlName="test_score"><br><br>
+    </div> -->
+
+          <button type="submit" value="Submit">Submit</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="m-3">
+  <h2 class="text-3xl font-bold mb-3">University Recommendation System</h2>
+  <div class="grid grid-cols-12">
+    <div class="grid-span-6 mx-3">
+      <label
+        for="country"
+        class="block mb-2 ml-3 text-sm font-medium text-gray-900"
+        >Country:</label
+      >
+      <select
+        id="country"
+        name="country"
+        required
+        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-96 p-2.5"
+      >
+        <option value="blank">Select an option</option>
+        <option value="GERMANY">GERMANY</option>
+      </select>
+    </div>
+    <div class="grid-span-6"></div>
+  </div>
+</div>
